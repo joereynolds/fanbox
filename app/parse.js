@@ -6,40 +6,42 @@ const disk = require('diskusage');
 const moment = require('moment');
 
 $(document).ready(function() {
-    $('.hostname').append(os.hostname());
+    setInterval(
+        function() {
+            $('.hostname').text(os.hostname());
 
-    $('.memory').append(
-        format[$('.memory').find('.value').data('format')]()
-    );
+            $('.memory').append(
+                format[$('.memory').find('.value').data('format')]()
+            );
 
-    $('.uptime').find('.value').each(function() {
-        $(this).append(
-            format[$(this).data('format')](os.uptime())
-        )
-    });
-    $('.disk-usage').find('.value').each(function() {
-        disk.check($('.disk-usage').attr('disk'), (err, info) => {
-            console.log(info);
-            $(this).text(
-                format[$(this).data('format')](info.available) + ' / '+  format[$(this).data('format')](info.total)
-            )
-        });
-    });
+            $('.uptime').find('.value').each(function () {
+                $(this).text(
+                    format[$(this).data('format')](os.uptime())
+                )
+            });
+            $('.disk-usage').find('.value').each(function () {
+                disk.check($('.disk-usage').attr('disk'), (err, info) => {
+                    $(this).text(
+                        format[$(this).data('format')](info.available) + ' / ' + format[$(this).data('format')](info.total)
+                    )
+                });
+            });
 
-    $('.datetime').find('.value').each(function() {
-        $(this).append(moment().format($(this).data('format')))
-    });
+            $('.datetime').find('.value').each(function () {
+                $(this).text(moment().format($(this).data('format')))
+            });
 
-    $('.raw-command').each(function() {
-        exec($(this).text(), (err, stdout, stderr) => {
-            console.log(stderr);
-            $(this).text('');
-            $(this).append(stdout);
-        });
-    });
+            $('.raw-command').each(function () {
+                exec($(this).text(), (err, stdout, stderr) => {
+                    console.log(stderr);
+                    $(this).text('');
+                    $(this).text(stdout);
+                });
+            });
 
+        }, 1000)
     //crappy refresh. Make this better
-    setTimeout("location.reload(true);", 1000);
+    //setTimeout("location.reload(true);", 1000);
 });
 
 var format = {

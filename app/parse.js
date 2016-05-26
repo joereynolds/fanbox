@@ -1,13 +1,13 @@
 'use strict';
 
-const os = require('os');
-const exec = require('child_process').exec;
-const disk = require('diskusage');
+const os     = require('os');
+const exec   = require('child_process').exec;
+const disk   = require('diskusage');
 const moment = require('moment');
 
-$(document).ready(function() {
+$(document).ready(function () {
     setInterval(
-        function() {
+        function () {
             $('.hostname').text(os.hostname());
 
             $('.memory').append(
@@ -22,7 +22,8 @@ $(document).ready(function() {
             $('.disk-usage').find('.value').each(function () {
                 disk.check($('.disk-usage').attr('disk'), (err, info) => {
                     $(this).text(
-                        format[$(this).data('format')](info.available) + ' / ' + format[$(this).data('format')](info.total)
+                        format[$(this).data('format')](info.available) + ' / ' + format[$(this)
+                            .data('format')](info.total)
                     )
                 });
             });
@@ -39,37 +40,36 @@ $(document).ready(function() {
                 });
             });
 
-        }, 1000)
-    //crappy refresh. Make this better
-    //setTimeout("location.reload(true);", 1000);
+        },
+        1000);
 });
 
 var format = {
 
-    bytes: function(n) {
-        return (n / 8)+ 'B';
+    bytes: function (n) {
+        return (n / 8) + 'B';
     },
 
-    kiloBytes: function(n) {
-        return Math.floor(n / 1024 ) + 'KB';
+    kiloBytes: function (n) {
+        return Math.floor(n / 1024) + 'KB';
     },
 
-    megaBytes: function(n) {
+    megaBytes: function (n) {
         return Math.floor(n / 1048576) + 'MB';
     },
 
-    gigaBytes: function(n) {
-        return Math.floor(n / 1073741824 ) + 'GB';
+    gigaBytes: function (n) {
+        return Math.floor(n / 1073741824) + 'GB';
     },
 
-    percent: function(nPercentof, subject) {
+    percent: function (nPercentof, subject) {
         return '%';
     },
 
     /*
      * Converts n milliseconds(by default) into seconds
      */
-    seconds: function(n, nTimeFormat="seconds") {
+    seconds: function (n, nTimeFormat = "seconds") {
 
         var time = {
             seconds: 1
@@ -81,11 +81,11 @@ var format = {
     /*
      * Converts n nTimeFormat into minutes
      */
-    minutes: function(n, nTimeFormat="seconds") {
+    minutes: function (n, nTimeFormat = "seconds") {
 
         var time = {
             milliseconds: 60000,
-            seconds: 60
+            seconds     : 60
         };
 
         return Math.floor(n / time[nTimeFormat]);
@@ -94,7 +94,7 @@ var format = {
     /*
      * Converts n nTimeFormat into hours
      */
-    hours: function(n, nTimeFormat="seconds") {
+    hours: function (n, nTimeFormat = "seconds") {
 
         var time = {
             seconds: 3600
@@ -104,7 +104,7 @@ var format = {
         return Math.floor(n / time[nTimeFormat]);
     },
 
-    numeric: function(n) {
-   
+    numeric: function (n) {
+
     }
 };

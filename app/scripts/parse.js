@@ -1,17 +1,18 @@
 'use strict';
 
-const selector    = require('./selectors.js');
-const os          = require('os');
-const exec        = require('child_process').exec;
-const disk        = require('diskusage');
-const moment      = require('moment');
-const c3          = require('c3');
+const selector = require('./selectors.js');
+const exec = require('child_process').exec;
 const libCpuUsage = require('cpu-usage');
-const format      = require('./format');
+const config = require('../config.json');
+const format = require('./format');
+const disk = require('diskusage');
+const moment = require('moment');
+const c3 = require('c3');
+const os = require('os');
 
 $(document).ready(function () {
     var i = 0;
-    $('.value[data-format="chart"]').each(function () {
+    $('[data-format="chart"]').each(function () {
         i++;
         var type = $(this).parent().attr('class');
         var id = `#${type}-chart-${i}`;
@@ -34,7 +35,7 @@ $(document).ready(function () {
         $(id).data('c3-chart', chart)
     });
 
-    libCpuUsage(1000, function (load) {
+    libCpuUsage(config.refresh * 1000, function (load) {
         $('[id^="cpu-chart"].c3').each(function() {
             $(this).data('c3-chart').load({
                 columns: [['data', load]]
@@ -81,7 +82,7 @@ $(document).ready(function () {
                 });
             });
         },
-        1000
+        config.refresh * 1000
     );
 });
 

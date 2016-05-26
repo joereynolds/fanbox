@@ -1,3 +1,4 @@
 {
-  "layout":"light.htm"
+  "layout":"light.htm",
+  "refresh": 1
 }

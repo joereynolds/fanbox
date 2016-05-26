@@ -3,8 +3,8 @@
         <link rel="stylesheet" type="text/css" href="theme.css">
     </head>
     <script>
-    window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');
-    require('./parse.js');
+        window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');
+        require('./parse.js');
     </script>
 
     <!-- This webkit draggable should be in the main js file somehow.
@@ -14,11 +14,17 @@
             <h1 class="hostname"></h1>
 
             <h2>UPTIME</h2>
+            <div class="uptime">
+                <div class="value" data-format="seconds">Seconds </div>
+                <div class="value" data-format="minutes">Minutes </div>
+                <div class="value" data-format="hours">Hours </div>
+            </div>
 
             <h2>RAM</h2>
             <div class="memory">
                 <div class="value" data-format="percent"></div>
             </div>
+
         </main>
     </body>
 </html>

@@ -8,6 +8,7 @@ const app = electron.app;
 //Module to create a native browser window
 const BrowserWindow = electron.BrowserWindow;
 
+require('electron-reload')(__dirname);
 
 //global reference to the window object. This is needed otherwise it
 //gets garbage collected
@@ -25,7 +26,7 @@ function createWindow() {
 
     mainWindow.loadURL('file://' + __dirname + '/fanbox.htm');
 
-    //mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', function() {
         mainWindow = null;

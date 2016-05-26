@@ -19,8 +19,8 @@ var format = {
         return Math.floor(n / 1073741824) + 'GB';
     },
 
-    percent: function (nPercentof, subject) {
-        return (nPercentof /subject ) * 100;
+    percent: function (percent, total) {
+        return percent / total * 100;
     },
 
     /*

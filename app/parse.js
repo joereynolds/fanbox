@@ -2,6 +2,7 @@
 
 const os = require('os');
 const exec = require('child_process').exec;
+const moment = require('moment');
 
 $(document).ready(function() {
     $('.hostname').append(os.hostname());
@@ -17,7 +18,7 @@ $(document).ready(function() {
     });
 
     $('.time').find('.value').each(function() {
-        $(this).append(new Date())
+        $(this).append(moment().format($(this).data('format')))
     });
 
     $('.raw-command').each(function() {

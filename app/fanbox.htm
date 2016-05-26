@@ -1,18 +1,22 @@
-<script>
-window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');
-require('./parse.js');
-</script>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="theme.css">
+    </head>
+    <script>
+    window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');
+    require('./parse.js');
+    </script>
 
+    <!-- This webkit draggable should be in the main js file somehow.
+    The user will always want this on -->
+    <body style="-webkit-app-region: drag">
+        <main>
+            <h1 class="hostname"></h1>
 
-
-<!-- This webkit draggable should be in the main js file somehow.
-The user will always want this on -->
-<body style="-webkit-app-region: drag">
-    <main>
-        <div class="hostname"></div>
-
-        <div class="cpu-usage">
-            <div class="value" data-format="percent" data-display="vbar"></div>
-        </div>
-    </main>
-</body>
+            <h2>CPU</h2>
+            <div class="cpu-usage">
+                <div class="value" data-format="percent" data-display="vbar"></div>
+            </div>
+        </main>
+    </body>
+</html>

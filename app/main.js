@@ -15,16 +15,17 @@ var mainWindow = null;
 
 
 function createWindow() {
+
     //width and height should be configurable by the user. Change this!
     mainWindow = new BrowserWindow({
-        width: 800, 
-        height: 600,
+        useContentSize: true,
         alwaysOnTop: true,
         frame: false
     });
+
     mainWindow.loadURL('file://' + __dirname + '/fanbox.htm');
 
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', function() {
         mainWindow = null;

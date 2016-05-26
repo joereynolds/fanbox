@@ -1,6 +1,5 @@
 'use strict'
 
-
 const electron = require('electron');
 
 //Module to control application life
@@ -9,6 +8,7 @@ const app = electron.app;
 //Module to create a native browser window
 const BrowserWindow = electron.BrowserWindow;
 
+
 //global reference to the window object. This is needed otherwise it
 //gets garbage collected
 var mainWindow = null;
@@ -16,7 +16,12 @@ var mainWindow = null;
 
 function createWindow() {
     //width and height should be configurable by the user. Change this!
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    mainWindow = new BrowserWindow({
+        width: 800, 
+        height: 600,
+        alwaysOnTop: true,
+        frame: false
+    });
     mainWindow.loadURL('file://' + __dirname + '/fanbox.htm');
 
     mainWindow.webContents.openDevTools();

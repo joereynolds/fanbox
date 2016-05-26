@@ -20,7 +20,7 @@ $(document).ready(function () {
                 )
             });
             $('.disk-usage').find('.value').each(function () {
-                disk.check($('.disk-usage').attr('disk'), (err, info) => {
+                disk.check($('.disk-usage').data('disk'), (err, info) => {
                     $(this).text(
                         format[$(this).data('format')](info.available) + ' / ' + format[$(this)
                             .data('format')](info.total)
@@ -33,9 +33,7 @@ $(document).ready(function () {
             });
 
             $('.raw-command').each(function () {
-                exec($(this).text(), (err, stdout, stderr) => {
-                    console.log(stderr);
-                    $(this).text('');
+                exec($(this).data('command'), (err, stdout, stderr) => {
                     $(this).text(stdout);
                 });
             });

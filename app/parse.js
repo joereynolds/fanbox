@@ -7,6 +7,7 @@ const disk        = require('diskusage');
 const moment      = require('moment');
 const c3          = require('c3');
 const libCpuUsage = require('cpu-usage');
+const format      = require('./format');
 
 $(document).ready(function () {
     var i = 0;
@@ -83,64 +84,3 @@ $(document).ready(function () {
         1000
     );
 });
-
-var format = {
-
-    bytes: function (n) {
-        return (n / 8) + 'B';
-    },
-
-    kiloBytes: function (n) {
-        return Math.floor(n / 1024) + 'KB';
-    },
-
-    megaBytes: function (n) {
-        return Math.floor(n / 1048576) + 'MB';
-    },
-
-    gigaBytes: function (n) {
-        return Math.floor(n / 1073741824) + 'GB';
-    },
-
-    percent: function (nPercentof, subject) {
-        return '%';
-    },
-
-    /*
-     * Converts n milliseconds(by default) into seconds
-     */
-    seconds: function (n, nTimeFormat = "seconds") {
-
-        var time = {
-            seconds: 1
-        };
-
-        return Math.floor(n / time[nTimeFormat]);
-    },
-
-    /*
-     * Converts n nTimeFormat into minutes
-     */
-    minutes: function (n, nTimeFormat = "seconds") {
-
-        var time = {
-            milliseconds: 60000,
-            seconds     : 60
-        };
-
-        return Math.floor(n / time[nTimeFormat]);
-    },
-
-    /*
-     * Converts n nTimeFormat into hours
-     */
-    hours: function (n, nTimeFormat = "seconds") {
-
-        var time = {
-            seconds: 3600
-
-        };
-
-        return Math.floor(n / time[nTimeFormat]);
-    },
-};

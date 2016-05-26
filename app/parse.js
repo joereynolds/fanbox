@@ -21,7 +21,7 @@ $(document).ready(function() {
         disk.check($('.disk-usage').attr('disk'), (err, info) => {
             console.log(info);
             $(this).text(
-                format[$(this).data('format')](info.total) + ' / '+  format[$(this).data('format')](info.total)
+                format[$(this).data('format')](info.available) + ' / '+  format[$(this).data('format')](info.total)
             )
         });
     });

@@ -6,7 +6,8 @@
   "dependencies": {
     "electron-reload": "^0.3.0",
     "jquery": "^2.2.4",
-    "moment": "^2.13.0"
+    "moment": "^2.13.0",
+    "diskusage": "0.1.5"
   },
   "devDependencies": {},
   "scripts": {

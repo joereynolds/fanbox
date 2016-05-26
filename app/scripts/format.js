@@ -20,7 +20,7 @@ var format = {
     },
 
     percent: function (nPercentof, subject) {
-        return '%';
+        return (nPercentof /subject ) * 100;
     },
 
     /*

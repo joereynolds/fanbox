@@ -1,0 +1,61 @@
+/**
+ * A sane starting theme.
+ * Create your own or modify this one
+ */
+
+/* reset */
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/* end reset */
+
+html {
+    font-family: arial;
+}
+body {
+    background: #fff;
+    margin: 0;
+}
+main {
+    padding: 0 50px 50px 50px;
+}
+header {
+    padding: 7px;
+    color: #fbfbfb;
+    background: #1EA7E1;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 12px;
+}
+header, h2 {
+    font-family: monospace;
+}
+h2 {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: #383838;
+    color: #fbfbfb;
+    margin-top: 0;
+}
+section {
+    flex: 1;
+    padding: 25px;
+    border: 1px solid #ccc;
+}
+section + section {
+    margin-left: 10px;
+}
+
+.flex-row {
+    display: flex;
+}
+.flex-row + .flex-row {
+    margin-top: 10px;
+}
+.fotd {
+    background: #383838;
+    color: #fbfbfb;
+}

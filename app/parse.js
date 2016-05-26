@@ -105,8 +105,4 @@ var format = {
 
         return Math.floor(n / time[nTimeFormat]);
     },
-
-    numeric: function (n) {
-
-    }
 };

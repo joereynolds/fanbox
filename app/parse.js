@@ -17,7 +17,7 @@ $(document).ready(function() {
         )
     });
 
-    $('.time').find('.value').each(function() {
+    $('.datetime').find('.value').each(function() {
         $(this).append(moment().format($(this).data('format')))
     });
 

@@ -8,7 +8,6 @@ cd app
 npm install
 ```
 
-
 ## Examples
 ```
 <!-- Shows a horizontal bar of CPU usage formatted in percent -->
@@ -40,14 +39,8 @@ Shows current memory usage. Can show multiple processes if data-count is supplie
 ```volume```
 Shows current volume
 
-```time```
-Shows current time
-
-```date```
-Shows current date in data-format format
-
 ```datetime```
-Shows date and time
+Shows date, time, date and time
 
 ```username```
 Shows your username
@@ -76,9 +69,14 @@ not all applicable to every element. formats can be :
 - 'gigabytes' - Shows the value in gigabytes
 - 'percent' - Shows the value as a percentage
 - 'numeric' - Used as a 'raw' way of representing the data. This is default if no data-format is specified
-- 'yy/mm/dd' etc... - Used to specify a date format
-- '24-hour' - Used on time and datetime to specify a 24 hour time format
-- '12-hour' - Used on time and datetime to specify a 12 hour time format
+
+Dates are formattable with anything that is accepted by moment.js
+
+- 'MMMM Do YYYY, h:mm:ss a' - Shows May 26th 2016, 4:21:48 pm
+- 'dddd'                    - Shows Thursday
+- "MMM Do YY"               - Shows May 26th 16
+- 'YYYY [escaped] YYYY'     - Shows 2016 escaped 2016
+
 
 ## Data display
 

@@ -8,6 +8,12 @@ cd app
 npm install
 ```
 
+## Running the app
+```
+cd app
+electron main.js
+```
+
 ## Examples
 ```
 <!-- Shows a horizontal bar of CPU usage formatted in percent -->

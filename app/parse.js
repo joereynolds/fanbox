@@ -16,8 +16,13 @@ $(document).ready(function() {
         )
     });
 
+    $('.time').find('.value').each(function() {
+        $(this).append(new Date())
+    });
+
     $('.raw-command').each(function() {
         exec($(this).text(), (err, stdout, stderr) => {
+            console.log(stderr);
             $(this).text('');
             $(this).append(stdout);
         });

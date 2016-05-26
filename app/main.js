@@ -19,6 +19,7 @@ function createWindow() {
 
     //width and height should be configurable by the user. Change this!
     mainWindow = new BrowserWindow({
+        height: 900,
         useContentSize: true,
         alwaysOnTop: true,
         frame: false

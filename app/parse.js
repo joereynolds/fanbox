@@ -1,6 +1,7 @@
 'use strict'
 
-var os = require('os');
+const os = require('os');
+const exec = require('child_process').exec;
 
 $(document).ready(function() {
     $('.hostname').append(os.hostname());
@@ -15,6 +16,11 @@ $(document).ready(function() {
         )
     });
 
+    exec($('.raw-command').text(), (err, stdout, stderr) => {
+        $('.raw-command').text('');
+        $('.raw-command').append(stdout);
+    });
+
     //crappy refresh. Make this better
     setTimeout("location.reload(true);", 1000);
 });
@@ -23,7 +29,6 @@ var format = {
 
     bytes: function() {
         
-   
     },
 
     kiloBytes: function(n) {

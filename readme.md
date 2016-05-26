@@ -54,6 +54,9 @@ Shows your hostname
 ```ip```
 Shows your ip
 
+```raw-command```
+Executes a command in the shell and returns the result of the shell command
+
 
 ## Data format
 

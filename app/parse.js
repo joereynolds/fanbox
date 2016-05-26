@@ -16,9 +16,11 @@ $(document).ready(function() {
         )
     });
 
-    exec($('.raw-command').text(), (err, stdout, stderr) => {
-        $('.raw-command').text('');
-        $('.raw-command').append(stdout);
+    $('.raw-command').each(function() {
+        exec($(this).text(), (err, stdout, stderr) => {
+            $(this).text('');
+            $(this).append(stdout);
+        });
     });
 
     //crappy refresh. Make this better

@@ -20,24 +20,11 @@ npm install
 
 ## Available Tags
 
-
-```cpu-usage```
-Shows current cpu-usage
-
 ```disk-usage```
 Shows amount of disk space remaining
 
-```process-list```
-Shows an amount of processes specified by data-count
-
-```battery-level```
-Shows the current battery level if possible
-
 ```memory```
 Shows current memory usage. Can show multiple processes if data-count is supplied
-
-```volume```
-Shows current volume
 
 ```datetime```
 Shows date, time, date and time
@@ -45,15 +32,28 @@ Shows date, time, date and time
 ```username```
 Shows your username
 
-```hostname```
-Shows your hostname
-
-```ip```
-Shows your ip
+```uptime```
+Shows system uptime
 
 ```raw-command```
 Executes a command in the shell and returns the result of the shell command
 
+## Planned tags
+
+```volume```
+Shows current volume
+
+```battery-level```
+Shows the current battery level if possible
+
+```cpu-usage```
+Shows current cpu-usage
+
+```ip```
+Shows your ip
+
+```process-list```
+Shows running processes
 
 ## Data format
 
@@ -85,4 +85,3 @@ There are multiple ways your data can be displayed :
 - 'bar-x' - Shows as a horizontal bar
 - 'bar-y' - Shows as a vertical bar
 - 'pie'   - Shows as a circle
-

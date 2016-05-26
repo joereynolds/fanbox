@@ -1,7 +1,8 @@
-'use strict'
+'use strict';
 
 const os = require('os');
 const exec = require('child_process').exec;
+const disk = require('diskusage');
 const moment = require('moment');
 
 $(document).ready(function() {
@@ -15,6 +16,13 @@ $(document).ready(function() {
         $(this).append(
             format[$(this).data('format')](os.uptime())
         )
+    });
+    $('.disk-usage').find('.value').each(function() {
+        disk.check($('.disk-usage').attr('disk'), (err, info) => {
+            $(this).text(
+                format[$(this).data('format')](info.available)
+            )
+        });
     });
 
     $('.datetime').find('.value').each(function() {
@@ -35,16 +43,20 @@ $(document).ready(function() {
 
 var format = {
 
-    bytes: function() {
-        
+    bytes: function(n) {
+        return (n / 8)+ 'B';
     },
 
     kiloBytes: function(n) {
-
+        return Math.floor(n / 1024 ) + 'KB';
     },
 
     megaBytes: function(n) {
-   
+        return Math.floor(n / 1048576) + 'MB';
+    },
+
+    gigaBytes: function(n) {
+        return Math.floor(n / 1073741824 ) + 'GB';
     },
 
     percent: function(nPercentof, subject) {

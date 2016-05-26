@@ -49,7 +49,7 @@ $(document).ready(function () {
             selector.memory.find('.value').each(function () {
                 $('[id^="memory-chart"].c3').each(function() {
                     $(this).data('c3-chart').load({
-                        columns: [['data', Math.round(os.totalmem() / os.freemem() * 10)]]
+                        columns: [['data', format['percent'](os.freemem(), os.totalmem())]]
                     });
                 });
             });

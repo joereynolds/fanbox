@@ -1,5 +1,6 @@
 'use strict';
 
+const selector = require('./selectors.js');
 const os     = require('os');
 const exec   = require('child_process').exec;
 const disk   = require('diskusage');
@@ -8,20 +9,20 @@ const moment = require('moment');
 $(document).ready(function () {
     setInterval(
         function () {
-            $('.hostname').text(os.hostname());
+            selector.hostname.text(os.hostname());
 
-            $('.memory').find('.value').each(function () {
+            selector.memory.find('.value').each(function () {
                 $(this).text(
                     format[$(this).data('format')]('placeholder', 'placeholder')
                 )
             });
 
-            $('.uptime').find('.value').each(function () {
+            selector.uptime.find('.value').each(function () {
                 $(this).text(
                     format[$(this).data('format')](os.uptime())
                 )
             });
-            $('.disk-usage').find('.value').each(function () {
+            selector.diskusage.find('.value').each(function () {
                 disk.check($('.disk-usage').data('disk'), (err, info) => {
                     $(this).text(
                         format[$(this).data('format')](info.available) + ' / ' + format[$(this)
@@ -30,11 +31,11 @@ $(document).ready(function () {
                 });
             });
 
-            $('.datetime').find('.value').each(function () {
+            selector.datetime.find('.value').each(function () {
                 $(this).text(moment().format($(this).data('format')))
             });
 
-            $('.raw-command').each(function () {
+            selector.rawcommand.each(function () {
                 exec($(this).data('command'), (err, stdout, stderr) => {
                     $(this).text(stdout);
                 });

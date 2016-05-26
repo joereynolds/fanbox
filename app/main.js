@@ -1,5 +1,6 @@
 'use strict';
 
+
 const electron = require('electron');
 
 //Module to control application life
@@ -9,6 +10,8 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
 require('electron-reload')(__dirname);
+
+const config = require('./config');
 
 //global reference to the window object. This is needed otherwise it
 //gets garbage collected
@@ -26,7 +29,7 @@ function createWindow() {
         maximizable: false
     });
 
-    mainWindow.loadURL('file://' + __dirname + '/layouts/fanbox.htm');
+    mainWindow.loadURL('file://' + __dirname + '/layouts/' + config.layout);
 
     mainWindow.webContents.openDevTools();
 

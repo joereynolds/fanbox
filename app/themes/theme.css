@@ -15,7 +15,7 @@ html {
     font-family: arial;
 }
 body {
-    background: #fff;
+    background: #4d4d4d;
     margin: 0;
 }
 main {
@@ -23,8 +23,8 @@ main {
 }
 header {
     padding: 7px;
-    color: #fbfbfb;
-    background: #1EA7E1;
+    color: #cbcbcb;
+    background: #020205;
     margin-bottom: 25px;
     text-align: center;
     font-size: 12px;
@@ -37,7 +37,7 @@ h2 {
     border: 1px solid #ccc;
     padding: 5px;
     background: #383838;
-    color: #fbfbfb;
+    color: #adadad;
     margin-top: 0;
 }
 section {

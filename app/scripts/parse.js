@@ -25,7 +25,7 @@ $(document).ready(function () {
                 type   : 'gauge'
             },
             color : {
-                pattern  : ['#60B044', '#F6C600', '#F97600', '#FF0000' ],
+                pattern  : ['#478433', '#F6C600', '#F97600', '#FF0000' ],
                 threshold: {
                     values: [30, 60, 90, 100]
                 }

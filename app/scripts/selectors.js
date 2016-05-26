@@ -10,6 +10,7 @@ $(document).ready(function() {
     var diskusage = $('.disk-usage');
     var datetime = $('.datetime');
     var rawcommand = $('.raw-command');
+    var loadaverage = $('.load-average');
 
     exports.hostname = hostname;
     exports.memory = memory;

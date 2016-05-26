@@ -5,10 +5,6 @@
     <script>
         window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');
         require('./parse.js');
-        var os = require('os');
-
-
-
     </script>
 
     <!-- This webkit draggable should be in the main js file somehow.
@@ -31,7 +27,7 @@
 
 
             <h2>Raw Shell Commands (ls -l)</h2>
-            <div class="raw-command">ls -l</div>
+            <div class="raw-command" data-command="ls -l"></div>
 
 
             <h2>Time (dddd)</h2>
@@ -45,7 +41,7 @@
             </div>
 
             <h2>DISK USAGE</h2>
-            <div class="disk-usage" disk="/">
+            <div class="disk-usage" data-disk="/">
                 <div class="value" data-format="bytes"></div>
                 <div class="value" data-format="kiloBytes"></div>
                 <div class="value" data-format="megaBytes"></div>

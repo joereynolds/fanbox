@@ -4,7 +4,7 @@
   "main": "main.js",
   "description": "Some Description",
   "dependencies": {
-    "electron-livereload": "0.0.2",
+    "electron-reload": "^0.3.0",
     "jquery": "^2.2.4"
   },
   "devDependencies": {},

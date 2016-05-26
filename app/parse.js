@@ -58,7 +58,7 @@ var format = {
     },
 
     /*
-     * Converts n milliseconds into seconds
+     * Converts n nTimeFormat into minutes
      */
     minutes: function(n, nTimeFormat="seconds") {
 
@@ -71,7 +71,7 @@ var format = {
     },
 
     /*
-     * Converts n milliseconds into seconds
+     * Converts n nTimeFormat into hours
      */
     hours: function(n, nTimeFormat="seconds") {
 

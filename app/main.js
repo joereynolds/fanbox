@@ -22,10 +22,11 @@ function createWindow() {
         height: 1100,
         useContentSize: true,
         alwaysOnTop: true,
-        frame: false
+        frame: false,
+        maximizable: false
     });
 
-    mainWindow.loadURL('file://' + __dirname + '/fanbox.htm');
+    mainWindow.loadURL('file://' + __dirname + '/layouts/fanbox.htm');
 
     mainWindow.webContents.openDevTools();
 

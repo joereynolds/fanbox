@@ -10,9 +10,11 @@ $(document).ready(function () {
         function () {
             $('.hostname').text(os.hostname());
 
-            $('.memory').append(
-                format[$('.memory').find('.value').data('format')]()
-            );
+            $('.memory').find('.value').each(function () {
+                $(this).text(
+                    format[$(this).data('format')]('placeholder', 'placeholder')
+                )
+            });
 
             $('.uptime').find('.value').each(function () {
                 $(this).text(

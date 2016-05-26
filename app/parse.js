@@ -46,9 +46,11 @@ $(document).ready(function () {
             selector.hostname.text(os.hostname());
 
             selector.memory.find('.value').each(function () {
-                $(this).text(
-                    format[$(this).data('format')]('placeholder', 'placeholder')
-                )
+                $('[id^="memory-chart"].c3').each(function() {
+                    $(this).data('c3-chart').load({
+                        columns: [['data', Math.round(os.totalmem() / os.freemem() * 10)]]
+                    });
+                });
             });
 
             selector.uptime.find('.value').each(function () {
@@ -56,6 +58,7 @@ $(document).ready(function () {
                     format[$(this).data('format')](os.uptime())
                 )
             });
+
             selector.diskusage.find('.value').each(function () {
                 disk.check($('.disk-usage').data('disk'), (err, info) => {
                     var selectedFormat = $(this).data('format');

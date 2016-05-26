@@ -2,7 +2,9 @@
 
 ## Installation
 
-```sudo npm install electron-prebuilt -g```
+```sudo npm install electron-prebuilt -g
+cd app
+npm install```
 
 
 ## Examples

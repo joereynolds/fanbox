@@ -1,5 +1,15 @@
 {
-    "name" : "fanbox",
-    "version" : "0.1.0",
-    "main" : "main.js"
+  "name": "fanbox",
+  "version": "0.1.0",
+  "main": "main.js",
+  "description": "Some Description",
+  "dependencies": {
+    "jquery": "^2.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }

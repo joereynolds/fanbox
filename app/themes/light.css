@@ -8,7 +8,6 @@ html {
     margin: 0;
     padding: 0;
 }
-
 /* end reset */
 
 html {
@@ -48,7 +47,6 @@ section {
 section + section {
     margin-left: 10px;
 }
-
 .flex-row {
     display: flex;
 }
@@ -58,4 +56,12 @@ section + section {
 .fotd {
     background: #383838;
     color: #fbfbfb;
+}
+.bar {
+    position: relative;
+    border: 1px solid #ccc;
+}
+.bar-inner {
+    background: #383838;
+    height: 10px;
 }

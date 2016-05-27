@@ -35,6 +35,10 @@ $(document).ready(function () {
         $(id).data('c3-chart', chart)
     });
 
+    $('[data-format="chart-bar"]').each(function () {
+        $(this).append('<div class="bar"><div class="bar-inner"></div></div>')
+    });
+
     libCpuUsage(config.refresh * 1000, function (load) {
         $('[id^="cpu-chart"].c3').each(function() {
             $(this).data('c3-chart').load({
@@ -52,6 +56,9 @@ $(document).ready(function () {
                     $(this).data('c3-chart').load({
                         columns: [['data', format['percent'](os.totalmem() - os.freemem(), os.totalmem())]]
                     });
+                });
+                $('.bar-inner').each(function() {
+                    $(this).width(format['percent'](os.totalmem() - os.freemem(), os.totalmem()) + '%')
                 });
             });
 

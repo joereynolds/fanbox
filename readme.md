@@ -4,9 +4,9 @@
 
 ```
 git clone https://github.com/joereynolds/fanbox
-cd app
+cd fanbox/app
 sudo npm install electron-prebuilt -g
-npm install
+sudo npm install
 ```
 
 ## Running the app

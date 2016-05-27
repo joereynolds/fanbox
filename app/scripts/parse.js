@@ -1,6 +1,6 @@
 'use strict';
 
-const selector = require('./selectors.js');
+const selector = require('./selectors');
 const exec = require('child_process').exec;
 const libCpuUsage = require('cpu-usage');
 const config = require('../config.json');
@@ -93,6 +93,6 @@ $(document).ready(function () {
     );
 });
 
-$( window ).resize(function() {
+$(window).resize(function() {
     window.location.href = window.location.href
 });

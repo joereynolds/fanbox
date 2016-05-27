@@ -3,16 +3,19 @@
 ## Installation
 
 ```
-sudo npm install electron-prebuilt -g
+git clone https://github.com/joereynolds/fanbox
 cd app
+sudo npm install electron-prebuilt -g
 npm install
 ```
 
 ## Running the app
 ```
-cd app
 electron main.js
 ```
+
+## Example
+![alt-text](fanbox.gif)
 
 ## Examples
 ```

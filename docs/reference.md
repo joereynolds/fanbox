@@ -43,8 +43,9 @@ For the raw-command to work, you need to supply a ```data-command``` attribute l
 ```
 
 #### Undocumented
-```disk-usage```
-DOCUMENT THIS. I have no idea what it does...
+```
+disk-usage
+```
 
 ## Planned tags
 

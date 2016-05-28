@@ -49,7 +49,9 @@ $(document).ready(function () {
 
     setInterval(
         () => {
-            selector.hostname.text(os.hostname());
+            selector.hostname.find('.value').each(function() {
+                $(this).text(os.hostname());
+            });
 
             selector.memory.find('.value').each(function () {
                 $('[id^="memory-chart"].c3').each(function() {

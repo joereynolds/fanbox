@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
     <head>
     <link rel="stylesheet" type="text/css" href="../themes/light.css">
@@ -14,7 +15,10 @@
         <main>
             <div class="flex-row">
                 <section>
-                    <h2 class="hostname"></h2>
+
+                    <h2 class="hostname">
+                        <div class="value"></div>
+                    </h2>
                     <div class="raw-command" data-command="pwd"></div>
                     <div class="datetime">
                         <div class="value" data-format="MMM Do YYYY"></div>
@@ -61,15 +65,15 @@
 
                 <section class="battery">
                     <h2>System</h2>
-					
-                    <p>Battery: 
-						<span
-							 class="raw-command"
-                         	 data-command="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}'">
-						</span>
+
+                    <p>Battery:
+                        <span
+                            class="raw-command"
+                            data-command="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}'">
+                        </span>
 					</p>
 					<p>Volume:
-						<span 
+						<span
 							class="raw-command"
 							data-command='exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | sed -n 2p'
 						</span>

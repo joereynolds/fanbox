@@ -32,15 +32,34 @@ See the [getting started](docs/getting-started.md) guide for a complete run thro
 
 Here are a few examples of what Fanbox comes with out of the box
 
-###
+### HTML classes to display system information
 ```
-<!-- Shows a gauge bar of RAM usage-->
 <main>
+  <!-- Shows a gauge bar of RAM usage-->
   <div class="memory">
     <div class="value" data-format="chart-gauge"></div>
   </div>
+
+  <!-- RAM usage in a horizontal bullet chart -->
+  <div class="memory">
+    <div class="value" data-format="chart-bar"></div>
+  </div>
+
+  <!-- Shows a gauge bar of CPU usage -->
+  <div class="cpu">
+    <div class="value" data-format="chart-gauge"></div>
+  </div>
+
+  <!-- Shows system uptime in minutes (can also do seconds and hours) -->
+  <div class="uptime">
+    <div class="value" data-format="minutes"></div>
+  </div>
+
+  <!-- Execute a shell command to show the pwd -->
+  <div class="raw-command" data-command="pwd"></div>
 </main>
 ```
+
 ### Execute raw shell commands
 
 Fanbox doesn't come with everything under the sun, if it's missing something you need, you can add it in yourself with some shell-fu!

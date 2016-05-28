@@ -1,5 +1,6 @@
 
 
+
 # Fanbox
 
 ## Installation
@@ -28,9 +29,7 @@ There are no made-up tags or any scripts to adjust, just HTML.
 
 ## Getting started
 
-A getting started guide is on its way. Hang tight!
-
-<!--See the [getting started](docs/getting-started.md) guide for a complete run through of creating a theme.-->
+See the [getting started](docs/getting-started.md) guide for a complete run through of creating a theme.
 
 ## Examples
 

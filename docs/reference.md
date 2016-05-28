@@ -49,7 +49,9 @@ disk-usage
 
 ## Planned tags
 
-```process-list```
+```
+process-list
+```
 Shows running processes
 
 ## Data format
@@ -72,7 +74,9 @@ the ```datetime``` class uses [momentjs](http://momentjs.com) under the hood, so
 
 Here's a complete list of all the ```data-format```s we've built into Fanbox.
 
-```data-format```
+```
+data-format
+```
 
 Specifies the format that the value could be in. There are several values that this can be though they are
 not all applicable to every element. formats can be :

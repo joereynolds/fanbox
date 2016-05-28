@@ -4,6 +4,7 @@ const selectors = require('./selectors');
 const exec = require('child_process').exec;
 const libCpuUsage = require('cpu-usage');
 const config = require('../config.json');
+const widgets = require('./widgets');
 const format = require('./format');
 const disk = require('diskusage');
 const moment = require('moment');
@@ -51,45 +52,9 @@ $(document).ready(function () {
         () => {
             for (let selector in selectors) {
                 selectors[selector].find('.value').each(function() {
-                    switch(selector) {
-                        case 'hostname':
-                            $(this).text(os.hostname());
-                            break;
-                        case 'ram':
-                            $('[id^="ram-chart"].c3').each(function() {
-                                $(this).data('c3-chart').load({
-                                    columns: [['data', format['percent'](os.totalmem() - os.freemem(), os.totalmem())]]
-                                });
-                            });
-                            $('.bar-inner').each(function() {
-                                $(this).width(format['percent'](os.totalmem() - os.freemem(), os.totalmem()) + '%')
-                            });
-                            break;
-                        case 'uptime':
-                            $(this).text(
-                                format[$(this).data('format')](os.uptime())
-                            );
-                            break;
-                        case 'disk':
-                            disk.check(selectors.disk.data('disk'), (err, info) => {
-                                var selectedFormat = $(this).data('format');
-                                if (typeof format[selectedFormat] != "undefined") {
-                                    $(this).text(
-                                        format[selectedFormat](info.available) + ' / ' + format[selectedFormat](info.total)
-                                    )
-                                }
-                            });
-                            break;
-                        case 'datetime':
-                            $(this).text(moment().format($(this).data('format')));
-                            break;
-                    }
+                    widgets[selector]($(this));
                 });
             }
-
-
-            selectors.disk.find('.value').each(function () {
-            });
 
             selectors.rawcommand.each(function () {
                 exec($(this).data('command'), (err, stdout, stderr) => {

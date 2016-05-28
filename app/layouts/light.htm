@@ -29,14 +29,14 @@
                 <section>
                     <h2>CPU</h2>
                     <div class="cpu">
-                        <div class="value" data-format="chart"></div>
+                        <div class="value" data-format="chart-gauge"></div>
                     </div>
                 </section>
 
                 <section>
                     <h2>RAM</h2>
                     <div class="memory">
-                        <div class="value" data-format="chart"></div>
+                        <div class="value" data-format="chart-gauge"></div>
                     </div>
                 </section>
 
@@ -60,15 +60,25 @@
                     </div>
                 </section>
 
-                <section>
-                    <h2>SPACE USAGE</h2>
-                    <div class="disk-usage" data-disk="/">
-                        <div class="value" data-format="chart"></div>
-                    </div>
+                <section class="battery">
+                    <h2>System</h2>
+					
+                    <p>Battery: 
+						<span
+							 class="raw-command"
+                         	 data-command="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}'">
+						</span>
+					</p>
+					<p>Volume:
+						<span 
+							class="raw-command"
+							data-command='exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | sed -n 2p'
+						</span>
+					</p>
+				</section>
 
-                </section>
 
-                <section>
+                <section >
                     <h2>FORTUNE</h2>
                     <div class="raw-command" data-command="fortune"></div>
                 </section>

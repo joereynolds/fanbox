@@ -55,7 +55,6 @@ var format = {
 
         var time = {
             seconds: 3600
-
         };
 
         return Math.floor(n / time[nTimeFormat]);

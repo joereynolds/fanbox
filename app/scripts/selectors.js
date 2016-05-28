@@ -1,16 +1,16 @@
 'use strict'
 
-var exports = module.exports = {};
-
 //Prevents us constantly querying the DOM
 $(document).ready(function() {
-    var uptime = $('.uptime');
-    var hostname = $('.hostname');
-    var memory = $('.memory');
-    var diskusage = $('.disk-usage');
-    var datetime = $('.datetime');
-    var rawcommand = $('.raw-command');
-    var loadaverage = $('.load-average');
+    const uptime = $('.uptime');
+    const hostname = $('.hostname');
+    const memory = $('.memory');
+    const diskusage = $('.disk-usage');
+    const datetime = $('.datetime');
+    const rawcommand = $('.raw-command');
+    const loadaverage = $('.load-average');
+    const chartgauge = $('[data-format="chart-gauge"]');
+    const chartbar = $('[data-format="chart-bar"]');
 
     exports.hostname = hostname;
     exports.memory = memory;
@@ -18,4 +18,6 @@ $(document).ready(function() {
     exports.diskusage = diskusage;
     exports.datetime = datetime;
     exports.rawcommand = rawcommand;
+    exports.chartgauge = chartgauge;
+	exports.chartbar = chartbar;
 });

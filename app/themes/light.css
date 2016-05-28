@@ -57,6 +57,14 @@ section + section {
     background: #383838;
     color: #fbfbfb;
 }
+.battery {
+    background: #1EA7E1;
+    text-align: center;
+    color: #fff;
+}
+.battery h2 {
+    background: #ffcc00;
+}
 .bar {
     position: relative;
     border: 1px solid #ccc;

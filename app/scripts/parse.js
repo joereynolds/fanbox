@@ -12,7 +12,7 @@ const os = require('os');
 
 $(document).ready(function () {
     var i = 0;
-    $('[data-format="chart"]').each(function () {
+    $(selector.chartgauge).each(function () {
         i++;
         var type = $(this).parent().attr('class');
         var id = `#${type}-chart-${i}`;
@@ -35,7 +35,7 @@ $(document).ready(function () {
         $(id).data('c3-chart', chart)
     });
 
-    $('[data-format="chart-bar"]').each(function () {
+    $(selector.chartbar).each(function () {
         $(this).append('<div class="bar"><div class="bar-inner"></div></div>')
     });
 

@@ -11,14 +11,16 @@ $(document).ready(function() {
     const loadaverage = $('.load-average');
     const chartgauge = $('[data-format="chart-gauge"]');
     const chartbar = $('[data-format="chart-bar"]');
+    const cpu = $('.cpu');
 
-    exports.hostname = hostname;
+    exports.cpu = cpu;
     exports.ram = ram;
-    exports.uptime = uptime;
     exports.disk = disk;
-    exports.datetime = datetime;
-    exports.rawcommand = rawcommand;
-    exports.chartgauge = chartgauge;
+    exports.uptime = uptime;
 	exports.chartbar = chartbar;
+    exports.datetime = datetime;
+    exports.hostname = hostname;
+    exports.chartgauge = chartgauge;
+    exports.rawcommand = rawcommand;
     exports.loadaverage = loadaverage;
 });

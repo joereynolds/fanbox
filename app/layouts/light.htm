@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
     <head>
     <link rel="stylesheet" type="text/css" href="../themes/light.css">
@@ -18,7 +19,9 @@
                     <h2 class="hostname">
                         <div class="value"></div>
                     </h2>
-                    <div class="raw-command" data-command="pwd"></div>
+                    <div class="raw-command">
+                        <span class="value" data-command="pwd"></span>
+                   </div>
                     <div class="datetime">
                         <div class="value" data-format="MMM Do YYYY"></div>
                     </div>
@@ -40,13 +43,6 @@
                     <h2>RAM</h2>
                     <div class="ram">
                         <div class="value" data-format="chart-gauge"></div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>RAM (Bar)</h2>
-                    <div class="ram">
-                        <div class="value" data-format="chart-bar"></div>
                     </div>
                 </section>
             </div>

@@ -26,13 +26,18 @@ var widgets = {
         });
     },
 
+    cpu: function process(obj) {
+        $('.cpu .bar-inner').each(function() {
+        });
+    },
+
     ram: function process(obj) {
         $('[id^="ram-chart"].c3').each(function() {
             $(this).data('c3-chart').load({
                 columns: [['data', format['percent'](os.totalmem() - os.freemem(), os.totalmem())]]
             });
         });
-        $('.bar-inner').each(function() {
+        $('.ram .bar-inner').each(function() {
             $(this).width(format['percent'](os.totalmem() - os.freemem(), os.totalmem()) + '%')
         });
     },

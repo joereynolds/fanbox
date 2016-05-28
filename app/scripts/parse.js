@@ -53,8 +53,8 @@ $(document).ready(function () {
                 $(this).text(os.hostname());
             });
 
-            selector.memory.find('.value').each(function () {
-                $('[id^="memory-chart"].c3').each(function() {
+            selector.ram.find('.value').each(function () {
+                $('[id^="ram-chart"].c3').each(function() {
                     $(this).data('c3-chart').load({
                         columns: [['data', format['percent'](os.totalmem() - os.freemem(), os.totalmem())]]
                     });
@@ -70,8 +70,8 @@ $(document).ready(function () {
                 )
             });
 
-            selector.diskusage.find('.value').each(function () {
-                disk.check($('.disk-usage').data('disk'), (err, info) => {
+            selector.disk.find('.value').each(function () {
+                disk.check(selector.disk.data('disk'), (err, info) => {
                     var selectedFormat = $(this).data('format');
                     if (typeof format[selectedFormat] != "undefined") {
                         $(this).text(

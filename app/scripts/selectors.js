@@ -4,8 +4,8 @@
 $(document).ready(function() {
     const uptime = $('.uptime');
     const hostname = $('.hostname');
-    const memory = $('.memory');
-    const diskusage = $('.disk-usage');
+    const ram = $('.ram');
+    const disk = $('.disk');
     const datetime = $('.datetime');
     const rawcommand = $('.raw-command');
     const loadaverage = $('.load-average');
@@ -13,11 +13,12 @@ $(document).ready(function() {
     const chartbar = $('[data-format="chart-bar"]');
 
     exports.hostname = hostname;
-    exports.memory = memory;
+    exports.ram = ram;
     exports.uptime = uptime;
-    exports.diskusage = diskusage;
+    exports.disk = disk;
     exports.datetime = datetime;
     exports.rawcommand = rawcommand;
     exports.chartgauge = chartgauge;
 	exports.chartbar = chartbar;
+    exports.loadaverage = loadaverage;
 });

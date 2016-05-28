@@ -1,3 +1,4 @@
+
 # Reference classes
 
 ####Show current CPU usage
@@ -39,7 +40,9 @@ raw-command
 For the raw-command to work, you need to supply a ```data-command``` attribute like so:
 
 ```
-<div class="raw-command" data-command="ls -l"></div>
+<div class="raw-command">
+  <span class="value" data-command="ls -l"></span>
+</div>
 ```
 
 #### Undocumented

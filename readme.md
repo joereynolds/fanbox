@@ -1,4 +1,5 @@
 
+
 # Fanbox
 
 ## Installation
@@ -59,7 +60,9 @@ Here are a few examples of what Fanbox comes with out of the box
   </div>
 
   <!-- Execute a shell command to show the pwd -->
-  <div class="raw-command" data-command="pwd"></div>
+  <div class="raw-command">
+    <span class="value" data-command="pwd"></span>
+  </div>
 </main>
 ```
 
@@ -70,19 +73,25 @@ Fanbox doesn't come with everything under the sun, if it's missing something you
 Just give a tag the ```raw-command``` class and inject your command into ```data-command``` like so
 
 ```
-<div class="raw-command" data-command="ls -l"></div>
+<div class="raw-command">
+  <span class="value" data-command="ls -l"></span>
+</div>
 ```
 
 This be can be further expanded to provide actual useful information like battery level and volume level.
 
 ```
 <!-- Shows battery level in percentage -->
-<span class="raw-command" data-command="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}'"></span>
+<span class="raw-command">
+  <span class="value" data-command="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}'"></span>
+</span>
 ```
 
 ```
 <!-- Shows volume level in percentage -->
-<span class="raw-command" data-command='exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | sed -n 2p'></span>
+<span class="raw-command"
+  <span class="value" data-command='exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | sed -n 2p'></span>
+</span>
 ```
 ### Contributing.
 

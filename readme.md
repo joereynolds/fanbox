@@ -83,6 +83,10 @@ This be can be further expanded to provide actual useful information like batter
 <!-- Shows volume level in percentage -->
 <span class="raw-command" data-command='exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | sed -n 2p'></span>
 ```
+### Contributing.
+
+If you'd like to contribute, first off, thank you!
+You can read more with our [contribution guide](docs/contributing.md)
 
 ### Reference
 

@@ -1,15 +1,12 @@
 'use strict';
 
+
 const selectors = require('./selectors');
 const exec = require('child_process').exec;
 const libCpuUsage = require('cpu-usage');
 const config = require('../config.json');
 const widgets = require('./widgets');
-const format = require('./format');
-const disk = require('diskusage');
-const moment = require('moment');
 const c3 = require('c3');
-const os = require('os');
 
 $(document).ready(function () {
     var i = 0;

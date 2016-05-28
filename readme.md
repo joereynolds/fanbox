@@ -83,3 +83,7 @@ This be can be further expanded to provide actual useful information like batter
 <!-- Shows volume level in percentage -->
 <span class="raw-command" data-command='exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | sed -n 2p'></span>
 ```
+
+### Reference
+
+For a complete reference of every HTML class available and the various ```data-format```s please see the [reference](docs/reference.md) guide

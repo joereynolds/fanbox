@@ -5,6 +5,7 @@ const format = require('./format');
 const moment = require('moment');
 const diskusage = require ('diskusage');
 const selectors = require('./selectors');
+const exec = require('child_process').exec;
 
 var widgets = {
     hostname: function process(obj) {
@@ -17,6 +18,12 @@ var widgets = {
 
     datetime: function process(obj) {
         obj.text(moment().format(obj.data('format')));
+    },
+
+    rawcommand: function process(obj) {
+        exec(obj.data('command'), (err, stdout, stderr) => {
+            obj.text(stdout);
+        });
     },
 
     ram: function process(obj) {

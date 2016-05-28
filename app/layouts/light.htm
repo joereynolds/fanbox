@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
     <head>
     <link rel="stylesheet" type="text/css" href="../themes/light.css">
@@ -67,23 +66,25 @@
                     <h2>System</h2>
 
                     <p>Battery:
-                        <span
-                            class="raw-command"
-                            data-command="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}'">
+                    <span class="raw-command">
+                        <span class="value" data-command="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}'">
                         </span>
 					</p>
+
 					<p>Volume:
-						<span
-							class="raw-command"
-							data-command='exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | sed -n 2p'
+                    <span class="raw-command">
+                        <span class="value" data-command='exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | sed -n 2p'>
 						</span>
+                    </span>
 					</p>
 				</section>
 
 
                 <section >
                     <h2>FORTUNE</h2>
-                    <div class="raw-command" data-command="fortune"></div>
+                    <div class="raw-command">
+                        <span class="value" data-command="fortune"></span>
+                   </div>
                 </section>
 
             </div>

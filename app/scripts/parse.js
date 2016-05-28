@@ -1,6 +1,5 @@
 'use strict';
 
-
 const selectors = require('./selectors');
 const exec = require('child_process').exec;
 const libCpuUsage = require('cpu-usage');
@@ -47,17 +46,12 @@ $(document).ready(function () {
 
     setInterval(
         () => {
+            //The entry point for all widgets to  display data
             for (let selector in selectors) {
                 selectors[selector].find('.value').each(function() {
                     widgets[selector]($(this));
                 });
             }
-
-            selectors.rawcommand.each(function () {
-                exec($(this).data('command'), (err, stdout, stderr) => {
-                    $(this).text(stdout);
-                });
-            });
         },
         config.refresh * 1000
     );

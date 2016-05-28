@@ -1,6 +1,9 @@
 # Reference classes
 
-```cpu```
+
+```
+cpu
+```
 Shows current CPU usage
 
 ```memory```

@@ -1,6 +1,6 @@
 'use strict';
 
-const selector = require('./selectors');
+const selectors = require('./selectors');
 const exec = require('child_process').exec;
 const libCpuUsage = require('cpu-usage');
 const config = require('../config.json');
@@ -12,7 +12,7 @@ const os = require('os');
 
 $(document).ready(function () {
     var i = 0;
-    $(selector.chartgauge).each(function () {
+    $(selectors.chartgauge).each(function () {
         i++;
         var type = $(this).parent().attr('class');
         var id = `#${type}-chart-${i}`;
@@ -35,7 +35,7 @@ $(document).ready(function () {
         $(id).data('c3-chart', chart)
     });
 
-    $(selector.chartbar).each(function () {
+    $(selectors.chartbar).each(function () {
         $(this).append('<div class="bar"><div class="bar-inner"></div></div>')
     });
 
@@ -49,43 +49,49 @@ $(document).ready(function () {
 
     setInterval(
         () => {
-            selector.hostname.find('.value').each(function() {
-                $(this).text(os.hostname());
-            });
-
-            selector.ram.find('.value').each(function () {
-                $('[id^="ram-chart"].c3').each(function() {
-                    $(this).data('c3-chart').load({
-                        columns: [['data', format['percent'](os.totalmem() - os.freemem(), os.totalmem())]]
-                    });
-                });
-                $('.bar-inner').each(function() {
-                    $(this).width(format['percent'](os.totalmem() - os.freemem(), os.totalmem()) + '%')
-                });
-            });
-
-            selector.uptime.find('.value').each(function () {
-                $(this).text(
-                    format[$(this).data('format')](os.uptime())
-                )
-            });
-
-            selector.disk.find('.value').each(function () {
-                disk.check(selector.disk.data('disk'), (err, info) => {
-                    var selectedFormat = $(this).data('format');
-                    if (typeof format[selectedFormat] != "undefined") {
-                        $(this).text(
-                            format[selectedFormat](info.available) + ' / ' + format[selectedFormat](info.total)
-                        )
+            for (let selector in selectors) {
+                selectors[selector].find('.value').each(function() {
+                    switch(selector) {
+                        case 'hostname':
+                            $(this).text(os.hostname());
+                            break;
+                        case 'ram':
+                            $('[id^="ram-chart"].c3').each(function() {
+                                $(this).data('c3-chart').load({
+                                    columns: [['data', format['percent'](os.totalmem() - os.freemem(), os.totalmem())]]
+                                });
+                            });
+                            $('.bar-inner').each(function() {
+                                $(this).width(format['percent'](os.totalmem() - os.freemem(), os.totalmem()) + '%')
+                            });
+                            break;
+                        case 'uptime':
+                            $(this).text(
+                                format[$(this).data('format')](os.uptime())
+                            );
+                            break;
+                        case 'disk':
+                            disk.check(selectors.disk.data('disk'), (err, info) => {
+                                var selectedFormat = $(this).data('format');
+                                if (typeof format[selectedFormat] != "undefined") {
+                                    $(this).text(
+                                        format[selectedFormat](info.available) + ' / ' + format[selectedFormat](info.total)
+                                    )
+                                }
+                            });
+                            break;
+                        case 'datetime':
+                            $(this).text(moment().format($(this).data('format')));
+                            break;
                     }
                 });
+            }
+
+
+            selectors.disk.find('.value').each(function () {
             });
 
-            selector.datetime.find('.value').each(function () {
-                $(this).text(moment().format($(this).data('format')))
-            });
-
-            selector.rawcommand.each(function () {
+            selectors.rawcommand.each(function () {
                 exec($(this).data('command'), (err, stdout, stderr) => {
                     $(this).text(stdout);
                 });

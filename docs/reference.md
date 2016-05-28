@@ -31,7 +31,7 @@ e.g.
 ```
 Shows uptime in seconds
 
-#### Execute a command in the shell and return the result of the shell command
+#### Shell commands
 ```
 raw-command
 ```

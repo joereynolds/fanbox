@@ -1,3 +1,4 @@
+
 # Fanbox
 
 ## Installation
@@ -38,12 +39,12 @@ Here are a few examples of what Fanbox comes with out of the box
 ```
 <main>
   <!-- Shows a gauge bar of RAM usage-->
-  <div class="memory">
+  <div class="ram">
     <div class="value" data-format="chart-gauge"></div>
   </div>
 
   <!-- RAM usage in a horizontal bullet chart -->
-  <div class="memory">
+  <div class="ram">
     <div class="value" data-format="chart-bar"></div>
   </div>
 

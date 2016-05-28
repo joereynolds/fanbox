@@ -7,7 +7,7 @@ cpu
 
 ####Show current RAM usage
 ```
-memory
+ram
 ```
 
 ####Show date, time, date and time.
@@ -44,7 +44,7 @@ For the raw-command to work, you need to supply a ```data-command``` attribute l
 
 #### Undocumented
 ```
-disk-usage
+disk
 ```
 
 ## Planned tags

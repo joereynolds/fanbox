@@ -1,32 +1,48 @@
 # Reference classes
 
-
+####Show current CPU usage
 ```
 cpu
 ```
-Shows current CPU usage
 
-```memory```
-Shows current RAM usage
+####Show current RAM usage
+```
+memory
+```
 
-```datetime```
-Shows date, time, date and time.
+####Show date, time, date and time.
+```
+datetime
+```
 
-```username```
-Shows your hostname
+####Show your hostname
+```
+hostname
+```
 
-```uptime```
-Shows system uptime
-Can also optionall take a ```data-format``` attribute of either ```seconds```, ```minutes```, or ```hours```.
+####Show system uptime
+```
+uptime
+```
+Can also optionally take a ```data-format``` attribute of either ```seconds```, ```minutes```, or ```hours```.
 e.g.
 ```
 <div class="uptime" data-format="seconds"></div>
 ```
 Shows uptime in seconds
 
-```raw-command```
-Executes a command in the shell and returns the result of the shell command
+#### Execute a command in the shell and return the result of the shell command
+```
+raw-command
+```
 
+For the raw-command to work, you need to supply a ```data-command``` attribute like so:
+
+```
+<div class="raw-command" data-command="ls -l"></div>
+```
+
+#### Undocumented
 ```disk-usage```
 DOCUMENT THIS. I have no idea what it does...
 

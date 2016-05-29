@@ -8,7 +8,6 @@ html {
     margin: 0;
     padding: 0;
 }
-
 /* end reset */
 
 html {
@@ -22,6 +21,18 @@ body {
     width: 400px;
     margin: auto;
     padding: 25px;
+    position: relative;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #444;
+    color: #fff;
 }
 .bar {
     padding: 5px;

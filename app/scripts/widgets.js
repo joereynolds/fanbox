@@ -21,9 +21,20 @@ var widgets = {
     },
 
     rawcommand: function process(obj) {
-        exec(obj.data('command'), (err, stdout, stderr) => {
-            obj.text(stdout);
-        });
+
+        if (obj.data('format') === 'chart-bar') {
+            exec(obj.data('command'), (err, stdout, stderr) => {
+                obj.find('.bar-inner').each(function() {
+                    $(this).width(
+                        format['percent'](stdout, 100) + '%'
+                    );
+                });
+            });
+        } else {
+            exec(obj.data('command'), (err, stdout, stderr) => {
+                obj.text(stdout);
+            });
+        }
     },
 
     cpu: function process(obj) {

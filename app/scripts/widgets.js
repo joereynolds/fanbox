@@ -8,6 +8,7 @@ const selectors = require('./selectors');
 const exec = require('child_process').exec;
 
 var widgets = {
+
     hostname: function process(obj) {
         obj.text(os.hostname());
     },
@@ -54,7 +55,7 @@ var widgets = {
     },
 
     disk: function process(obj) {
-        diskusage.check(selectors.disk.data('disk'), (err, info) => {
+        diskusage.check(obj.parent().data('disk'), (err, info) => {
             let selectedFormat = obj.data('format');
             if (typeof format[selectedFormat] != "undefined") {
                 obj.text(

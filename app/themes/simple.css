@@ -14,6 +14,7 @@ html, body {
     box-sizing: border-box;
 }
 html {
+    overflow:hidden;
     font-family: arial;
     color: #444;
     font-size: 12px;

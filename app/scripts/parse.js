@@ -1,7 +1,6 @@
 'use strict';
 
 const selectors = require('./selectors');
-const exec = require('child_process').exec;
 const libCpuUsage = require('cpu-usage');
 const config = require('../config.json');
 const widgets = require('./widgets');

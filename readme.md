@@ -1,6 +1,3 @@
-
-
-
 # Fanbox
 
 ## Installation
@@ -17,10 +14,8 @@ sudo npm install
 electron main.js
 ```
 
-## Screenshots
+## Examples
 ![alt-text](simple.png)
-
-## Example
 ![alt-text](fanbox.gif)
 
 ## Fanbox

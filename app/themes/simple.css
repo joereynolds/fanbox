@@ -4,41 +4,45 @@
  */
 
 /* reset */
-html {
+html, body {
     margin: 0;
     padding: 0;
 }
 /* end reset */
 
+* {
+    box-sizing: border-box;
+}
 html {
     font-family: arial;
-    background: #fff;
     color: #444;
-    padding: 25px;
+    font-size: 12px;
 }
-body {
+main {
     background: #eee;
-    width: 400px;
-    margin: auto;
-    padding: 25px;
-    position: relative;
+    width: 200px;
+    padding: 10px;
 }
 footer {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
     background: #444;
     color: #fff;
 }
+section + section {
+    margin-top: 10px;
+}
+.hostname {
+    text-transform: capitalize;
+}
+.uptime {
+    float:right;
+}
 .bar {
-    padding: 5px;
     background:#fff;
 }
 .bar-inner {
     background: #444;
-    height:15px;
+    height:10px;
 }

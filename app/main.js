@@ -2,16 +2,13 @@
 
 
 const electron = require('electron');
+const config = require('./config');
 
-//Module to control application life
 const app = electron.app;
-
-//Module to create a native browser window
 const BrowserWindow = electron.BrowserWindow;
 
 require('electron-reload')(__dirname);
 
-const config = require('./config');
 
 //global reference to the window object. This is needed otherwise it
 //gets garbage collected
@@ -22,16 +19,17 @@ function createWindow() {
 
     //width and height should be configurable by the user. Change this!
     mainWindow = new BrowserWindow({
-        height: 1100,
+        width: config.themes[config.theme].width,
+        height: config.themes[config.theme].height,
         useContentSize: true,
         alwaysOnTop: true,
         frame: false,
         maximizable: false
     });
 
-    mainWindow.loadURL('file://' + __dirname + '/layouts/' + config.layout);
+    mainWindow.loadURL('file://' + __dirname + '/layouts/' + config.theme);
 
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', function() {
         mainWindow = null;

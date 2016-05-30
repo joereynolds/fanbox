@@ -1,5 +1,14 @@
-
 {
-  "layout":"light.htm",
+  "theme": "simple.htm",
+  "themes": {
+      "simple.htm": {
+          "width": 200,
+          "height": 210
+      },
+      "light.htm": {
+          "width": 800,
+          "height": 1000
+      }
+  },
   "refresh": 2
 }

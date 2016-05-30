@@ -17,6 +17,9 @@ sudo npm install
 electron main.js
 ```
 
+## Screenshots
+![alt-text](simple.png)
+
 ## Example
 ![alt-text](fanbox.gif)
 

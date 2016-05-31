@@ -1,13 +1,17 @@
 {
-  "theme": "simple.htm",
+  "theme": "shonky.htm",
   "themes": {
       "simple.htm": {
           "width": 200,
-          "height": 220
+          "height": 170
       },
       "light.htm": {
           "width": 800,
           "height": 1000
+      },
+      "shonky.htm": {
+          "width": 220,
+          "height": 250
       }
   },
   "refresh": 2

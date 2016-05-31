@@ -1,0 +1,26 @@
+/**
+ * A sane starting theme.
+ * Create your own or modify this one
+ */
+
+/* reset */
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/* end reset */
+
+html {
+    font-family: arial;
+    background: #ffcc00;
+    color: #fff;
+    padding: 25px;
+}
+body {
+    background: #1EA7E1;
+    width: 400px;
+    margin: auto;
+    padding: 25px;
+    text-align: center;
+}

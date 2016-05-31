@@ -1,0 +1,52 @@
+/**
+ * A sane starting theme.
+ * Create your own or modify this one
+ */
+
+/* reset */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+/* end reset */
+
+* {
+    box-sizing: border-box;
+}
+html {
+    overflow:hidden;
+    font-family: arial;
+    font-size: 12px;
+    color: #fff;
+}
+main {
+    background: #1EA7E1;
+    width: 220px;
+    padding: 10px;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: red;
+}
+section + section {
+    color: #red;
+    border: 2px solid #FFbb00;
+    background: #FFCC00;
+    padding: 10px;
+    margin-top: 10px;
+}
+.hostname {
+    text-transform: capitalize;
+}
+.uptime {
+    float:right;
+}
+.bar {
+    background:#fff;
+}
+.bar-inner {
+    background: #444;
+    height:10px;
+}

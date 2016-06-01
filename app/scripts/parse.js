@@ -8,29 +8,48 @@ const libCpuUsage = require('cpu-usage');
 const c3 = require('c3');
 
 $(document).ready(function () {
+
+    //Go through each chart type specialising in certain cases
     var i = 0;
-    $(selectors.chartgauge).each(function () {
+    $(selectors.chart).each(function() {
+
         i++;
         var type = $(this).parent().attr('class');
         var id = `#${type}-chart-${i}`;
         $(this).html(`<div id="${type}-chart-${i}"></div>`);
-        var chart = c3.generate({
-            bindto: id,
-            data  : {
-                columns: [
-                    ['data', 0]
-                ],
-                type   : 'gauge'
-            },
-            color : {
-                pattern  : ['#478433', '#F6C600', '#F97600', '#FF0000' ],
-                threshold: {
-                    values: [30, 60, 90, 100]
+
+        if ($(this).data('format') === 'chart-gauge') {
+            var chartType = 'gauge'
+        }
+
+        if ($(this).data('format') === 'chart-bar') {
+            var chartType = 'bar'
+        }
+
+        if ($(this).data('format') === 'chart-bullet') {
+            console.log('Process bars here');
+        }
+
+        if (typeof(chartType) !== 'undefined') {
+            var chart = c3.generate({
+                bindto: id,
+                data  : {
+                    columns: [
+                        ['data', 0]
+                    ],
+                    type   : chartType
+                },
+                color : {
+                    pattern  : ['#478433', '#F6C600', '#F97600', '#FF0000' ],
+                    threshold: {
+                        values: [30, 60, 90, 100]
+                    }
                 }
-            }
-        });
-        $(id).data('c3-chart', chart)
-    });
+            });
+            $(id).data('c3-chart', chart)
+        }
+    })
+
 
     $(selectors.chartbullet).each(function () {
         $(this).append('<div class="bar"><div class="bar-inner"></div></div>')

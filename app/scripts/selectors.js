@@ -2,14 +2,17 @@
 
 //Prevents us constantly querying the DOM
 $(document).ready(function() {
-    const uptime = $('.uptime');
-    const hostname = $('.hostname');
+    const cpu = $('.cpu');
     const ram = $('.ram');
     const disk = $('.disk');
+    const uptime = $('.uptime');
+    const hostname = $('.hostname');
     const datetime = $('.datetime');
     const rawcommand = $('.raw-command');
     const loadaverage = $('.load-average');
-    const cpu = $('.cpu');
+
+    //Generic selector to target all charts.
+    const chart = $('[data-format^="chart"]');
 
     const chartgauge = $('[data-format="chart-gauge"]');
     const chartbar = $('[data-format="chart-bar"]');
@@ -24,7 +27,9 @@ $(document).ready(function() {
     exports.rawcommand = rawcommand;
     exports.loadaverage = loadaverage;
 
+    exports.chart = chart;
 	exports.chartbar = chartbar;
     exports.chartgauge = chartgauge;
     exports.chartbullet = chartbullet;
+
 });

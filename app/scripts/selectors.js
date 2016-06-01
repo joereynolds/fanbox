@@ -9,18 +9,22 @@ $(document).ready(function() {
     const datetime = $('.datetime');
     const rawcommand = $('.raw-command');
     const loadaverage = $('.load-average');
+    const cpu = $('.cpu');
+
     const chartgauge = $('[data-format="chart-gauge"]');
     const chartbar = $('[data-format="chart-bar"]');
-    const cpu = $('.cpu');
+    const chartbullet = $('[data-format="chart-bullet"]');
 
     exports.cpu = cpu;
     exports.ram = ram;
     exports.disk = disk;
     exports.uptime = uptime;
-	exports.chartbar = chartbar;
     exports.datetime = datetime;
     exports.hostname = hostname;
-    exports.chartgauge = chartgauge;
     exports.rawcommand = rawcommand;
     exports.loadaverage = loadaverage;
+
+	exports.chartbar = chartbar;
+    exports.chartgauge = chartgauge;
+    exports.chartbullet = chartbullet;
 });

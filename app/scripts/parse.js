@@ -1,9 +1,10 @@
 'use strict';
 
-const selectors = require('./selectors');
-const libCpuUsage = require('cpu-usage');
-const config = require('../config.json');
 const widgets = require('./widgets');
+const config = require('../config.json');
+const selectors = require('./selectors');
+
+const libCpuUsage = require('cpu-usage');
 const c3 = require('c3');
 
 $(document).ready(function () {
@@ -31,7 +32,7 @@ $(document).ready(function () {
         $(id).data('c3-chart', chart)
     });
 
-    $(selectors.chartbar).each(function () {
+    $(selectors.chartbullet).each(function () {
         $(this).append('<div class="bar"><div class="bar-inner"></div></div>')
     });
 

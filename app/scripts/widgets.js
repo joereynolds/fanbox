@@ -1,10 +1,11 @@
 'use strict';
 
-const os = require('os');
 const format = require('./format');
+const selectors = require('./selectors');
+
+const os = require('os');
 const moment = require('moment');
 const diskusage = require ('diskusage');
-const selectors = require('./selectors');
 const exec = require('child_process').exec;
 
 var widgets = {
@@ -23,7 +24,7 @@ var widgets = {
 
     rawcommand: function process(obj) {
 
-        if (obj.data('format') === 'chart-bar') {
+        if (obj.data('format') === 'chart-bullet') {
             exec(obj.data('command'), (err, stdout, stderr) => {
                 obj.find('.bar-inner').each(function() {
                     $(this).width(

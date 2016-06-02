@@ -20,6 +20,10 @@ $(document).ready(function () {
 
         var chartType = $(this).data('format').split('-')[1];
 
+        if (chartType === 'bullet') {
+            $(this).append('<div class="bar"><div class="bar-inner"></div></div>')
+        }
+
         if (typeof(chartType) !== 'undefined' && chartType !== 'bullet') {
             var chart = c3.generate({
                 bindto: id,
@@ -38,11 +42,6 @@ $(document).ready(function () {
             });
             $(id).data('c3-chart', chart)
         }
-    })
-
-
-    $(selectors.chartbullet).each(function () {
-        $(this).append('<div class="bar"><div class="bar-inner"></div></div>')
     });
 
     libCpuUsage(config.refresh * 1000, function (load) {

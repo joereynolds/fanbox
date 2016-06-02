@@ -21,11 +21,13 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: config.themes[config.theme].width,
         height: config.themes[config.theme].height,
+        title: 'Fanbox',
         useContentSize: true,
         alwaysOnTop: true,
         frame: false,
         maximizable: false
     });
+
 
     mainWindow.loadURL('file://' + __dirname + '/layouts/' + config.theme);
 

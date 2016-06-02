@@ -18,29 +18,19 @@ $(document).ready(function () {
         var id = `#${type}-chart-${i}`;
         $(this).html(`<div id="${type}-chart-${i}"></div>`);
 
-        if ($(this).data('format') === 'chart-gauge') {
-            var chartType = 'gauge'
-        }
+        var chartType = $(this).data('format').split('-')[1];
 
-        if ($(this).data('format') === 'chart-bar') {
-            var chartType = 'bar'
-        }
-
-        if ($(this).data('format') === 'chart-bullet') {
-            console.log('Process bars here');
-        }
-
-        if (typeof(chartType) !== 'undefined') {
+        if (typeof(chartType) !== 'undefined' && chartType !== 'bullet') {
             var chart = c3.generate({
                 bindto: id,
-                data  : {
+                data : {
                     columns: [
                         ['data', 0]
                     ],
-                    type   : chartType
+                    type : chartType
                 },
                 color : {
-                    pattern  : ['#478433', '#F6C600', '#F97600', '#FF0000' ],
+                    pattern : ['#478433', '#F6C600', '#F97600', '#FF0000' ],
                     threshold: {
                         values: [30, 60, 90, 100]
                     }

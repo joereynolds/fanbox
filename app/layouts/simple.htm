@@ -11,6 +11,7 @@
     The user will always want this on -->
     <body style="-webkit-app-region: drag">
         <main>
+
             <section>
                 <span class="hostname">
                     <span class="value"></span>
@@ -19,11 +20,19 @@
                     Uptime: <span class="value" data-format="minutes"></span>m
                 </span>
             </section>
+
+            <section>
+                <div class="cpu">
+                    CPU: <div class="value" data-format="chart-bullet"></div>
+                </div>
+            </section>
+
             <section>
                 <div class="ram">
                     RAM: <div class="value" data-format="chart-bullet"></div>
                 </div>
             </section>
+
             <section>
                 <div class="disk" data-disk="/">
                     Space Free on '/': <span class="value" data-format="gigaBytes"></span>

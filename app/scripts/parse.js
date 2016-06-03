@@ -4,10 +4,10 @@ const widgets = require('./widgets');
 const config = require('../config.json');
 const selectors = require('./selectors');
 
-const libCpuUsage = require('cpu-usage');
 const c3 = require('c3');
+const libCpuUsage = require('cpu-usage');
 
-$(document).ready(function () {
+$(document).ready(() => {
 
     //Go through each chart type specialising in certain cases
     var i = 0;
@@ -44,17 +44,9 @@ $(document).ready(function () {
         }
     });
 
-    libCpuUsage(config.refresh * 1000, function (load) {
-        $('[id^="cpu-chart"].c3').each(function() {
-            $(this).data('c3-chart').load({
-                columns: [['data', load]]
-            });
-        });
-    });
-
     setInterval(
         () => {
-            //The entry point for all widgets to  display data
+            //The entry point for all widgets to display data
             for (let selector in selectors) {
                 selectors[selector].find('.value').each(function() {
                     widgets[selector]($(this));

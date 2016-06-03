@@ -6,9 +6,10 @@ const selectors = require('./selectors');
 const os = require('os');
 const moment = require('moment');
 const diskusage = require ('diskusage');
+const libCpuUsage = require('cpu-usage');
 const exec = require('child_process').exec;
 
-var widgets = {
+const widgets = {
 
     hostname: function process(obj) {
         obj.text(os.hostname());
@@ -40,8 +41,21 @@ var widgets = {
     },
 
     cpu: function process(obj) {
-        $('.cpu .bar-inner').each(function() {
-        });
+        if (obj.data('format') === 'chart-bullet') {
+            $('.cpu .bar-inner').each(function() {
+                libCpuUsage((load) => {
+                    $(this).width(format['percent'](load, 100) + '%')
+                });
+            });
+        } else {
+            libCpuUsage((load) => {
+                $('[id^="cpu-chart"].c3').each(function() {
+                    $(this).data('c3-chart').load({
+                        columns: [['data', load]]
+                    });
+                });
+            });
+        }
     },
 
     ram: function process(obj) {
@@ -65,7 +79,6 @@ var widgets = {
             }
         });
     }
-
 };
 
 

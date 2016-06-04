@@ -5,16 +5,43 @@
 ```
 cpu
 ```
+Can also optionally take a ```data-format``` attribute of either ```bullet```, ```gauge```, or ```chart```.
+e.g.
+```
+<div class="cpu">
+  <div class="value" data-format="bullet"></div>
+</div>
+```
 
 ####Show current RAM usage
 ```
 ram
+```
+Can also optionally take a ```data-format``` attribute of either ```bullet```, ```gauge```, or ```chart```.
+e.g.
+```
+<div class="ram">
+  <div class="value" data-format="gauge"></div>
+</div>
+```
+
+####Show Free system space
+```
+disk
 ```
 
 ####Show date, time, date and time.
 ```
 datetime
 ```
+Can also optionally take a ```data-format``` attribute of any valid momentjs date format.
+e.g.
+```
+<div class="datetime">
+  <div class="value" data-format="MMM Do YY"></div>
+</div>
+```
+See below.
 
 ####Show your hostname
 ```
@@ -28,7 +55,9 @@ uptime
 Can also optionally take a ```data-format``` attribute of either ```seconds```, ```minutes```, or ```hours```.
 e.g.
 ```
-<div class="uptime" data-format="seconds"></div>
+<div class="uptime">
+    <div class="value" data-format="seconds"></div>
+</div>
 ```
 Shows uptime in seconds
 
@@ -44,11 +73,9 @@ For the raw-command to work, you need to supply a ```data-command``` attribute l
   <span class="value" data-command="ls -l"></span>
 </div>
 ```
-
-#### Undocumented
-```
-disk
-```
+Can also optionally take a ```data-format``` attribute of  ```bullet``` to style
+the output of the shell command as a bullet-chart. Note that in order for this
+to work, the command must return either an integer, or a string containing an integer.
 
 ## Planned tags
 

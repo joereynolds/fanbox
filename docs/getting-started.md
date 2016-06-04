@@ -6,7 +6,7 @@ Before we get started on making themes, styling and the structure of the HTML, w
 
 Configuration of meta-aspects of Fanbox are done through a config.json file located in the 'app' directory.
 
-There are (at present) two configurable options
+There are (at present) the following configurable options
 
 ```
 layout
@@ -16,6 +16,38 @@ The name of the html file to use for its layout.
 Refresh
 ```
 How often Fanbox should refresh and show you the newest information.
+```
+width
+```
+The width of the window containing the dashboard.
+```
+height
+```
+The height of the window containing the dashboard.
+
+###Sample config
+```
+{
+  "theme": "simple.htm",
+  "themes": {
+      "simple.htm": {
+          "width": 200,
+          "height": 205
+      },
+      "light.htm": {
+          "width": 800,
+          "height": 1000
+      },
+      "shonky.htm": {
+          "width": 220,
+          "height": 250
+      }
+  },
+  "refresh": 2
+}
+```
+The above config file tells Fanbox that we're using the simple.htm theme.
+This will then have a width of 200, height of 205, and refresh every 2 seconds.
 
 
 ## Making your own theme
@@ -23,7 +55,7 @@ How often Fanbox should refresh and show you the newest information.
 ### HTML
 The first thing to do is to make a copy of the html file that comes with Fanbox. This is called light.htm, make a copy and rename it to my-theme.html (or whatever else you want).
 
-The most important thing to remember with the html is that every Fanbox class (raw-command, cpu, memory etc...) always has a child element with a class of ```value```. This is where the content gets injected into. 
+The most important thing to remember with the html is that every Fanbox class (raw-command, cpu, memory etc...) always has a child element with a class of ```value```. This is where the content gets injected into.
 
 If something's not display or working correctly, it's likely the structure is wrong.
 
@@ -47,6 +79,3 @@ See the [reference](reference.md) for more information and if something's not cl
 If you want to style your theme, make sure to point the ```<link>``` attribute in your layout file to your stylesheet.
 
 You can style it however you want.
-
-
-

@@ -2,6 +2,7 @@
 
 const format = require('./format');
 const selectors = require('./selectors');
+const helpers = require('./helpers');
 
 const os = require('os');
 const moment = require('moment');

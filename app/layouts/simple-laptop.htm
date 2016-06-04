@@ -34,12 +34,6 @@
             </section>
 
             <section>
-                <div class="ram">
-                    RAM: <div class="value" data-format="chart-gauge"></div>
-                </div>
-            </section>
-
-            <section>
                 <div class="disk" data-disk="/">
                     Space Free on '/': <span class="value" data-format="gigaBytes"></span>
                 </div>
@@ -79,6 +73,27 @@
                     </span>
                 </span>
             </p>
+            </section>
+
+            <section>
+                <fieldset class="processes">
+                  <legend>Processes</legend>
+                  <div class="raw-command">
+                      1.<span class="value" data-command="ps aux | sort -rk 3,3 | sed -n 2p | awk '{print $11}'"></span>
+                  </div>
+                  <div class="raw-command">
+                      2.<span class="value" data-command="ps aux | sort -rk 3,3 | sed -n 3p | awk '{print $11}'"></span>
+                  </div>
+                  <div class="raw-command">
+                      3.<span class="value" data-command="ps aux | sort -rk 3,3 | sed -n 4p | awk '{print $11}'"></span>
+                  </div>
+                  <div class="raw-command">
+                      4.<span class="value" data-command="ps aux | sort -rk 3,3 | sed -n 5p | awk '{print $11}'"></span>
+                  </div>
+                  <div class="raw-command">
+                      5.<span class="value" data-command="ps aux | sort -rk 3,3 | sed -n 6p | awk '{print $11}'"></span>
+                  </div>
+              </fieldset>
             </section>
 
         </main>

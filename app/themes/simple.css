@@ -24,6 +24,9 @@ main {
     width: 200px;
     padding: 10px;
 }
+fieldset {
+    min-width: 0;
+}
 footer {
     display: flex;
     justify-content: space-between;
@@ -46,4 +49,14 @@ section + section {
 .bar-inner {
     background: #444;
     height:10px;
+}
+.processes {
+    word-wrap: break-word;
+    padding: 5px;
+    border: 1px solid;
+    height: 180px; /* :( */
+    overflow: hidden;
+}
+.processes >* + * {
+    margin-top: 5px;
 }

@@ -1,11 +1,12 @@
 'use strict';
 
+
+const chart = require('./chart');
 const widgets = require('./widgets');
 const config = require('../config.json');
 const selectors = require('./selectors');
 
 const c3 = require('c3');
-const libCpuUsage = require('cpu-usage');
 
 $(document).ready(() => {
 
@@ -14,12 +15,11 @@ $(document).ready(() => {
         let type = $(this).parent().attr('class');
         let id = `#${type}-chart-${index}`;
         let idNoHash = id.substring(1);
-        let chartType = $(this).data('format').split('-')[1];
+        let chartType = chart.getChartType($(this));
  
         $(this).html(`<div id="${idNoHash}"></div>`);
 
-
-        if (chartType === 'bullet') {
+        if (chart.isBulletChart($(this))) {
             $(this).append(
                 `<div class="bar">
                     <div class="bar-inner"></div>

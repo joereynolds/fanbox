@@ -1,13 +1,14 @@
 'use strict';
 
+
 const format = require('./format');
 const selectors = require('./selectors');
-const helpers = require('./helpers');
+const chart  = require('./chart');
 
 const os = require('os');
 const moment = require('moment');
 const diskusage = require ('diskusage');
-const libCpuUsage = require('cpu-usage');
+const cpuusage= require('cpu-usage');
 const exec = require('child_process').exec;
 
 const widgets = {
@@ -26,7 +27,7 @@ const widgets = {
 
     rawcommand: function process(obj) {
 
-        if (obj.data('format') === 'chart-bullet') {
+        if (chart.isBulletChart(obj)) {
             exec(obj.data('command'), (err, stdout, stderr) => {
                 obj.find('.bar-inner').each(function() {
                     $(this).width(
@@ -42,14 +43,14 @@ const widgets = {
     },
 
     cpu: function process(obj) {
-        if (obj.data('format') === 'chart-bullet') {
+        if (chart.isBulletChart(obj)) {
             $('.cpu .bar-inner').each(function() {
-                libCpuUsage((load) => {
+                cpuusage((load) => {
                     $(this).width(format['percent'](load, 100) + '%')
                 });
             });
         } else {
-            libCpuUsage((load) => {
+            cpuusage((load) => {
                 $('[id^="cpu-chart"].c3').each(function() {
                     $(this).data('c3-chart').load({
                         columns: [['data', load]]

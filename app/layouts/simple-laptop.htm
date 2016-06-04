@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="../themes/simple.css">
+    </head>
+    <script>
+        window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');
+        require('../scripts/parse.js');
+    </script>
+
+    <!-- This webkit draggable should be in the main js file somehow.
+    The user will always want this on -->
+    <body style="-webkit-app-region: drag">
+        <main>
+
+            <section>
+                <span class="hostname">
+                    <span class="value"></span>
+                </span>
+                <span class="uptime">
+                    Uptime: <span class="value" data-format="minutes"></span>m
+                </span>
+            </section>
+
+            <section>
+                <div class="cpu">
+                    CPU: <div class="value" data-format="chart-bullet"></div>
+                </div>
+            </section>
+
+            <section>
+                <div class="ram">
+                    RAM: <div class="value" data-format="chart-bullet"></div>
+                </div>
+            </section>
+
+            <section>
+                <div class="disk" data-disk="/">
+                    Space Free on '/': <span class="value" data-format="gigaBytes"></span>
+                </div>
+            </section>
+
+            <section>
+            <p>Volume:
+                <span class="raw-command">
+                    <span
+                        class="value"
+                        data-format="chart-bullet"
+                        data-command='exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | sed -n 2p | cut -c1-2'>
+                    </span>
+                </span>
+            </p>
+            </section>
+
+            <section>
+            <p>Battery:
+                <span class="raw-command">
+                    <span
+                        class="value"
+                        data-format="chart-bullet"
+                        data-command="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}' | cut -c 1-2">
+                    </span>
+                </span>
+            </p>
+            </section>
+
+        </main>
+        <footer>
+            <div class="datetime">
+                <span class="value" data-format="MMM Do YYYY"></span>
+            </div>
+            <div class="datetime">
+                <span class="value" data-format="H:mm:ss"></span>
+            </div>
+        </footer>
+    </body>
+</html>

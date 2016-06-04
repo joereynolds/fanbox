@@ -1,9 +1,14 @@
+
 {
-  "theme": "simple.htm",
+  "theme": "simple-laptop.htm",
   "themes": {
       "simple.htm": {
           "width": 200,
           "height": 205
+      },
+      "simple-laptop.htm": {
+          "width": 200,
+          "height": 240
       },
       "light.htm": {
           "width": 800,

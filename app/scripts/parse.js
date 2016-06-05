@@ -16,15 +16,11 @@ $(document).ready(() => {
         let id = `#${type}-chart-${index}`;
         let idNoHash = id.substring(1);
         let chartType = chart.getChartType($(this));
- 
+
         $(this).html(`<div id="${idNoHash}"></div>`);
 
         if (chart.isBulletChart($(this))) {
-            $(this).append(
-                `<div class="bar">
-                    <div class="bar-inner"></div>
-                 </div>`
-            )
+            $(this).append(chart.getBulletChartHtml())
         }
 
         if (typeof(chartType) !== 'undefined' && chartType !== 'bullet') {

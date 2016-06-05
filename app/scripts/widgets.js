@@ -13,6 +13,7 @@ const exec = require('child_process').exec;
 
 const widgets = {
 
+    //obj is a jQuery element object
     hostname: function process(obj) {
         obj.text(os.hostname());
     },
@@ -29,11 +30,7 @@ const widgets = {
 
         if (chart.isBulletChart(obj)) {
             exec(obj.data('command'), (err, stdout, stderr) => {
-                obj.find('.bar-inner').each(function() {
-                    $(this).width(
-                        format['percent'](stdout, 100) + '%'
-                    );
-                });
+                this.populateBulletChart(obj, stdout, 100);
             });
         } else {
             exec(obj.data('command'), (err, stdout, stderr) => {
@@ -44,11 +41,9 @@ const widgets = {
 
     cpu: function process(obj) {
         if (chart.isBulletChart(obj)) {
-            $('.cpu .bar-inner').each(function() {
-                cpuusage((load) => {
-                    $(this).width(format['percent'](load, 100) + '%')
-                });
-            });
+            cpuusage((load) => {
+                this.populateBulletChart(obj, load, 100);
+            })
         } else {
             cpuusage((load) => {
                 $('[id^="cpu-chart"].c3').each(function() {
@@ -66,8 +61,20 @@ const widgets = {
                 columns: [['data', format['percent'](os.totalmem() - os.freemem(), os.totalmem())]]
             });
         });
-        $('.ram .bar-inner').each(function() {
-            $(this).width(format['percent'](os.totalmem() - os.freemem(), os.totalmem()) + '%')
+
+        this.populateBulletChart(
+            obj,
+            os.totalmem() - os.freemem(),
+            os.totalmem()
+        );
+    },
+
+
+    //Gives the inner bar belonging to 'obj' some 'value' of 'total'
+    populateBulletChart: function(obj, value, total) {
+        let widgetParent = $(obj.parent());
+        widgetParent.find('.bar-inner').each(function() {
+            $(this).width(format['percent'](value, total) + '%')
         });
     },
 

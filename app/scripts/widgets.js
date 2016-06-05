@@ -30,7 +30,7 @@ const widgets = {
 
         if (chart.isBulletChart(obj)) {
             exec(obj.data('command'), (err, stdout, stderr) => {
-                this.populateBulletChart(obj, stdout, 100);
+                chart.populateBulletChart(obj, stdout, 100);
             });
         } else {
             exec(obj.data('command'), (err, stdout, stderr) => {
@@ -42,7 +42,7 @@ const widgets = {
     cpu: function process(obj) {
         if (chart.isBulletChart(obj)) {
             cpuusage((load) => {
-                this.populateBulletChart(obj, load, 100);
+                chart.populateBulletChart(obj, load, 100);
             })
         } else {
             cpuusage((load) => {
@@ -62,20 +62,11 @@ const widgets = {
             });
         });
 
-        this.populateBulletChart(
+        chart.populateBulletChart(
             obj,
             os.totalmem() - os.freemem(),
             os.totalmem()
         );
-    },
-
-
-    //Gives the inner bar belonging to 'obj' some 'value' of 'total'
-    populateBulletChart: function(obj, value, total) {
-        let widgetParent = $(obj.parent());
-        widgetParent.find('.bar-inner').each(function() {
-            $(this).width(format['percent'](value, total) + '%')
-        });
     },
 
     disk: function process(obj) {

@@ -1,5 +1,7 @@
 # Fanbox
 
+[![bitHound Overall Score](https://www.bithound.io/github/joereynolds/fanbox/badges/score.svg)](https://www.bithound.io/github/joereynolds/fanbox)
+
 ## Installation
 
 ```

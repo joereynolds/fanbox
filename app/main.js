@@ -32,7 +32,7 @@ function createWindow() {
     mainWindow.loadURL('file://' + __dirname + '/layouts/' + config.theme);
 
     //make this configurable via the config.json file
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', function() {
         mainWindow = null;

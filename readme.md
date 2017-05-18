@@ -4,6 +4,10 @@
 
 ## Installation
 
+Make sure you're on Node 7.4. The most recent version of Electron uses this version of node.
+`sudo npm install n -g`
+`sudo n 7.4`
+
 ```
 git clone https://github.com/joereynolds/fanbox
 cd fanbox/app

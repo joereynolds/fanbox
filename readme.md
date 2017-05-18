@@ -7,8 +7,8 @@
 ```
 git clone https://github.com/joereynolds/fanbox
 cd fanbox/app
-sudo npm install electron-prebuilt -g
-sudo npm install
+npm install
+npm start
 ```
 
 ## Running the app

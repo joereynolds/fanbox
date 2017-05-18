@@ -19,11 +19,6 @@ npm install
 npm start
 ```
 
-## Running the app
-```
-electron main.js
-```
-
 ## Examples
 ![alt-text](simple.png)
 ![alt-text](fanbox.gif)

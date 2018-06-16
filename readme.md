@@ -6,7 +6,7 @@
 
 ### Debian distros
 
-Download and install the `.deb` packages on the [releases](https://github.com/joereynolds/fanbox/releases) page.
+Download and install the `.deb` package on the [releases](https://github.com/joereynolds/fanbox/releases) page.
 
 ### Everyone else
 ```

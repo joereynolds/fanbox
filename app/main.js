@@ -7,15 +7,9 @@ const config = require('./config');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
-require('electron-reload')(__dirname, {
-    electron: require('./node_modules/electron/index.js')
-});
-
-
 //global reference to the window object. This is needed otherwise it
 //gets garbage collected
 var mainWindow = null;
-
 
 function createWindow() {
 
@@ -29,7 +23,6 @@ function createWindow() {
         frame: false,
         maximizable: false
     });
-
 
     mainWindow.loadURL('file://' + __dirname + '/layouts/' + config.theme);
 

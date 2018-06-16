@@ -1,8 +1,8 @@
 {
   "name": "fanbox",
   "version": "0.1.0",
-  "main": "main.js",
-  "description": "Some Description",
+  "main": "app/main.js",
+  "description": "A system dashboard creator using HTML, CSS, and JS",
   "dependencies": {
     "electron": "1.7.9",
     "c3": "^0.4.11",
@@ -14,9 +14,8 @@
     "moment": "^2.13.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "./node_modules/.bin/electron-rebuild",
-    "start": "electron main.js"
+    "start": "electron app/main.js"
   },
   "author": "",
   "license": "ISC",

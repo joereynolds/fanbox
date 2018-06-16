@@ -6,7 +6,6 @@
 
 ```
 git clone https://github.com/joereynolds/fanbox
-cd fanbox/app
 npm install
 npm start
 ```

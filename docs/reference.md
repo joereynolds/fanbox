@@ -1,7 +1,7 @@
 
 # Reference classes
 
-####Show current CPU usage
+#### Show current CPU usage
 ```
 cpu
 ```
@@ -13,7 +13,7 @@ e.g.
 </div>
 ```
 
-####Show current RAM usage
+#### Show current RAM usage
 ```
 ram
 ```
@@ -25,12 +25,12 @@ e.g.
 </div>
 ```
 
-####Show Free system space
+#### Show Free system space
 ```
 disk
 ```
 
-####Show date, time, date and time.
+#### Show date, time, date and time.
 ```
 datetime
 ```
@@ -43,12 +43,12 @@ e.g.
 ```
 See below.
 
-####Show your hostname
+#### Show your hostname
 ```
 hostname
 ```
 
-####Show system uptime
+#### Show system uptime
 ```
 uptime
 ```
@@ -89,7 +89,7 @@ Shows running processes
 The data-format attribute specifies the general display for an element. If one is not
 specified, it should fall back to the raw output.
 
-###Example
+### Example
 the ```datetime``` class uses [momentjs](http://momentjs.com) under the hood, so any momentjs format will work!
 
 All tags can be formatted in certain ways. For instance, the ```datetime``` tag is a very flexible tag which can take a numerous amount of format types.
@@ -108,15 +108,15 @@ All tags can be formatted in certain ways. For instance, the ```datetime``` tag 
 </div>
 ```
 
-###Reference
+### Reference
 
-####Charts
+#### Charts
 - chart-bar    - Displays the result as a vertical bar chart
 - chart-gauge  - Displays the result as a gauge chart
 - chart-bullet - Displays the result as a horizontal bar chart (bullet chart)
 
 
-####Dates
+#### Dates
 Dates are formattable with anything that is accepted by moment.js
 
 - 'MMMM Do YYYY, h:mm:ss a' - Shows May 26th 2016, 4:21:48 pm
@@ -124,16 +124,16 @@ Dates are formattable with anything that is accepted by moment.js
 - "MMM Do YY"               - Shows May 26th 16
 - 'YYYY [escaped] YYYY'     - Shows 2016 escaped 2016
 
-####Time
+#### Time
 - 'seconds' - Shows the value in seconds
 - 'minutes' - Shows the value in minutes
 - 'hours' - Shows the value in hours
 
-####Filesize
+#### Filesize
 - 'bytes'     - Shows the value in bytes
 - 'kilobyes'  - Shows the value in kilobytes
 - 'megabytes' - Shows the value in megabytes
 - 'gigabytes' - Shows the value in gigabytes
 
-####General
+#### General
 - 'percent' - Shows the value as a percentage

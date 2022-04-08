@@ -11,7 +11,7 @@
     "electron": "^2.0.8",
     "electron-reload": "^0.3.0",
     "jquery": "^3.5.0",
-    "moment": "^2.13.0"
+    "moment": "^2.29.2"
   },
   "scripts": {
     "prestart": "./node_modules/.bin/electron-rebuild",
